@@ -6,6 +6,7 @@ import HomePage from './containers/HomePage';
 import AboutPage from './containers/AboutPage';
 import TodosPage from './containers/TodosPage';
 import PostsPage from './containers/Posts/PostsPage';
+import UserPage from './containers/Users/UserPage';
 
 
 
@@ -33,6 +34,9 @@ export default function Blog(props) {
                         </Route>
                         <Route path="/about">
                             <AboutPage />
+                        </Route>
+                        <Route path="/user/:postId">
+                            <UserPage />
                         </Route>
                     </Switch>
                 </Container>
