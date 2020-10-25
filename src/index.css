@@ -9,3 +9,11 @@ body {
 a {
   text-decoration: none;
 }
+ul {
+  list-style: none;
+}
+
+h3,h6,h4 {
+  margin: 0;
+  padding: 0;
+}
