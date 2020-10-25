@@ -5,7 +5,7 @@ import { Navigation } from './components/Navigation';
 import HomePage from './containers/HomePage';
 import AboutPage from './containers/AboutPage';
 import TodosPage from './containers/TodosPage';
-import PostsPage from './containers/PostsPage';
+import PostsPage from './containers/Posts/PostsPage';
 
 
 
