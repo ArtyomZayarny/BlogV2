@@ -12,6 +12,9 @@ a {
 ul {
   list-style: none;
 }
+h1,h2 {
+  margin: 15px 0;
+}
 
 h3,h6,h4 {
   margin: 0;

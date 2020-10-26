@@ -35,7 +35,7 @@ export default function Blog(props) {
                         <Route path="/about">
                             <AboutPage />
                         </Route>
-                        <Route path="/user/:postId">
+                        <Route path="/users/:userId">
                             <UserPage />
                         </Route>
                     </Switch>

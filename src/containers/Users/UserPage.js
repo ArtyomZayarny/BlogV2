@@ -4,23 +4,13 @@ import useData from '../../hooks/useData';
 import User from './User';
 
 export default function UserPage(props) {
-    const {postId} = useParams();
-    const [users,isFetching] = useData('/users');
-    const [user,setUser] = useState({})
-  
-    useEffect( () => {
-    
-        if (users.length > 0) {
-            const user = users.filter( item => item.id === parseInt(postId))[0];
-            setUser(user);
-        }
-    }, [users])
- 
+    const {userId} = useParams();
+    const [user,isFetching] = useData(`/users/${userId}`);
 
     return (
         <>
             <h2>User page</h2>
-            {isFetching ? 'Loading....' :  <User  {...user}/>}
+            {isFetching ? <h2>Loading....</h2> : <User  {...user}/>}
         </>
     )
 }

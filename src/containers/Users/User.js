@@ -51,3 +51,10 @@ export default function User({name,email, phone,website, ...props}) {
         </>
     )
 }
+User.defaultProps = {
+  name:'Timaz',
+  email:'artyom.zayarny@gmail.com',
+  phone:'+380934333435',
+  city:'Odessa',
+  companyName:"Epam"
+}
