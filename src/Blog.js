@@ -1,10 +1,9 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
-import {BrowserRouter as Router,Switch,Route, NavLink} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom'
 import { Navigation } from './components/Navigation';
-import HomePage from './containers/HomePage';
+import UsersPage from './containers/Users/UsersPage';
 import AboutPage from './containers/AboutPage';
-import TodosPage from './containers/TodosPage';
 import PostsPage from './containers/Posts/PostsPage';
 import UserPage from './containers/Users/UserPage';
 
@@ -12,27 +11,24 @@ import UserPage from './containers/Users/UserPage';
 
 
 export default function Blog(props) {
-    
 
-      return (
-            <>
+
+    return (
+        <>
             <Router>
                 <Container>
                     <NavLink to="/">
-                        <h1>Blog</h1>
+                        <h1>BlogV2</h1>
                     </NavLink>
                     <Navigation />
                     <Switch>
                         <Route path="/" exact>
-                            <HomePage />
+                            <PostsPage />
                         </Route>
-                        <Route path="/posts">
-                            <PostsPage/>
+                        <Route path="/users">
+                            <UsersPage />
                         </Route>
-                        <Route path="/todos">
-                            <TodosPage/>
-                        </Route>
-                        <Route path="/about">
+                        <Route path="/albums">
                             <AboutPage />
                         </Route>
                         <Route path="/users/:userId">
@@ -41,7 +37,7 @@ export default function Blog(props) {
                     </Switch>
                 </Container>
             </Router>
-            </>
-      )
+        </>
+    )
 }
 
