@@ -25,13 +25,13 @@ export default function Blog(props) {
                         <Route path="/" exact>
                             <PostsPage />
                         </Route>
-                        <Route path="/users">
+                        <Route path="/users" exact>
                             <UsersPage />
                         </Route>
                         <Route path="/albums">
                             <AboutPage />
                         </Route>
-                        <Route path="/users/:userId">
+                        <Route path="/users/:userId" >
                             <UserPage />
                         </Route>
                     </Switch>
