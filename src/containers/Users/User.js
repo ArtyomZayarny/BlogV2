@@ -12,11 +12,16 @@ import AlbumPage from '../AlbumPage';
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+    width: "30%",
+    marginRight: 15
   },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
     transform: 'scale(0.8)',
+  },
+  content: {
+    width: "70%"
   },
   title: {
     fontSize: 14,
@@ -24,9 +29,11 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
-  classes: {
-    display: "flex"
+  userWrp: {
+    display: "flex",
+    width: "100%"
   }
+
 });
 
 export default function User({ name, email, phone, website, ...props }) {
@@ -57,18 +64,22 @@ export default function User({ name, email, phone, website, ...props }) {
             {`Company : ${companyName}`}
           </Typography>
           <Typography variant="body2" component="p">
-            {albums.length} Albums
+            <ul>
+              {albums.length} Albums
               {albums.map((album) => {
-              return <Link to={`${url}/albums/${album.id}`}>{album.title}</Link>
-            })}
+                return <li><Link key={album.id} to={`${url}/albums/${album.id}`}>{album.title}</Link></li>
+              })}
+            </ul>
           </Typography>
         </CardContent>
       </Card>
-      <Switch>
-        <Route path={`${path}/albums/:albumId`}>
-          <AlbumPage />
-        </Route>
-      </Switch>
+      <div className={classes.content}>
+        <Switch>
+          <Route path={`${path}/albums/:albumId`}>
+            <AlbumPage />
+          </Route>
+        </Switch>
+      </div>
     </div>
   )
 }
