@@ -2,13 +2,12 @@ import { Card, CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import useData from '../hooks/useData';
+import useData from '../../hooks/useData';
 
-export default function TodosPage(props) {
+export default function AlbumPage(props) {
 	const { albumId } = useParams();
 	const [album, load] = useData(`/albums/${albumId}`)
 	const [photos, isFetching] = useData(`/photos?albumId=${albumId}`);
-
 
 
 
@@ -21,7 +20,7 @@ export default function TodosPage(props) {
 					</Typography>
 
 					{isFetching ? "Loading..." : photos.map((photo) => {
-						return <a href={photos.url} ><img src={photo.thumbnailUrl} /></a>
+						return <a href={photos.url} key={photo.id}><img src={photo.thumbnailUrl} /></a>
 					})}
 				</CardContent>
 			</Card>

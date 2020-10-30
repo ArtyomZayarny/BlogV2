@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import useData from '../../hooks/useData';
 import { Link, Route, useRouteMatch, Switch } from 'react-router-dom';
-import AlbumPage from '../AlbumPage';
+import AlbumPage from '../Albums/AlbumPage';
 
 
 
@@ -63,14 +63,14 @@ export default function User({ name, email, phone, website, ...props }) {
           <Typography variant="body2" component="p">
             {`Company : ${companyName}`}
           </Typography>
-          <Typography variant="body2" component="p">
-            <ul>
-              {albums.length} Albums
+
+          <ul>
+            {albums.length} Albums
               {albums.map((album) => {
-                return <li><Link key={album.id} to={`${url}/albums/${album.id}`}>{album.title}</Link></li>
-              })}
-            </ul>
-          </Typography>
+              return <li key={album.id} ><Link to={`${url}/albums/${album.id}`}>{album.title}</Link></li>
+            })}
+          </ul>
+
         </CardContent>
       </Card>
       <div className={classes.content}>
